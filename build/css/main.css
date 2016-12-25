@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:300,400);
+@font-face {
+  font-family: "BigNoodleTitling";
+  font-weight: ttf otf eot woff woff2 svg;
+  src: url("../fonts/BigNoodleTitling.eot?") format("eot"), url("../fonts/BigNoodleTitling.woff2") format("woff2"), url("../fonts/BigNoodleTitling.woff") format("woff"), url("../fonts/BigNoodleTitling.ttf") format("truetype"), url("../fonts/BigNoodleTitling.svg#BigNoodleTitling") format("svg"); }
+
+@font-face {
+  font-family: "BigNoodleTitling-Oblique";
+  font-weight: ttf otf eot woff woff2 svg;
+  src: url("../fonts/BigNoodleTitling-Oblique.eot?") format("eot"), url("../fonts/BigNoodleTitling-Oblique.woff2") format("woff2"), url("../fonts/BigNoodleTitling-Oblique.woff") format("woff"), url("../fonts/BigNoodleTitling-Oblique.ttf") format("truetype"), url("../fonts/BigNoodleTitling-Oblique.svg#BigNoodleTitling-Oblique") format("svg"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0; }
+
+a, a:hover {
+  text-decoration: none; }
+
+section, footer {
+  display: block; }
+
+h1, h2, h3 {
+  font-weight: normal; }
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Open Sans", sans-serif; }
+
+.wrapper {
+  background: url(../img/bg.jpg) no-repeat center top;
+  background-size: cover; }
+
+.container {
+  width: 1180px;
+  margin: 0 auto;
+  text-align: center; }
+
+.logo {
+  margin: 10px 0 15px; }
+
+.title {
+  font-family: "BigNoodleTitling-Oblique";
+  font-size: 65pt;
+  text-shadow: 10px 5px 25px #000; }
+
+.subtitle {
+  font-family: "Cabin", sans-serif;
+  font-size: 30pt;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 1px #000;
+  width: 640px;
+  margin: 0 auto; }
+
+.subtitle-left {
+  text-align: left; }
+
+.subtitle-right {
+  text-align: right; }
+
+.account-form {
+  display: block;
+  float: right;
+  margin: 25px 100px 0 0;
+  width: 290px; }
+
+.account-title {
+  font-family: "BigNoodleTitling-Oblique";
+  font-size: 20pt;
+  text-shadow: 5px 0px 40px #000, 0px 0px 30px #000;
+  margin: 0 0 15px; }
+
+.account-title-green {
+  color: #69c60f;
+  font-size: 24pt; }
+
+.account-input {
+  display: block;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  background: #000;
+  color: #bdbdbd;
+  margin: 0 0 18px;
+  padding: 14px 10px;
+  box-sizing: border-box; }
+
+.account-input-phonecode {
+  width: 55px;
+  float: left; }
+
+.account-input-phonenum {
+  width: 215px;
+  float: right; }
+
+.account-button {
+  width: 100%; }
+
+.clearfix {
+  clear: both; }
+
+.benefits-block-img {
+  display: block;
+  margin: 0 auto; }
+
+.eligibility {
+  text-align: left;
+  color: #c3c3c3; }

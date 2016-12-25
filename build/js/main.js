@@ -1,5 +1,5 @@
 var request = new XMLHttpRequest();
-request.open('GET', 'http://localhost:8080', true);
+request.open('HEAD', 'http://localhost:8080', true);
 request.onreadystatechange = function(e){
 	if (this.readyState == 4){
 		if (this.status == 200){

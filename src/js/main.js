@@ -1,9 +1,10 @@
-var account = document.getElementById('account'),
-	emailMask = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-	telMask = ^[0-9]$;
-	passMask = ^[a-z][A-Z][0-9]$;
+var account = document.getElementById('account');
+var emailMask = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var passMask = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/;
 
-account.onsubmit = function(){
+account.onsubmit = function(event){
+	event.preventDefault();
+
 	var	fname = document.getElementById('fname'),
 	lname = document.getElementById('lname'),
 	email = document.getElementById('email'),
@@ -25,6 +26,7 @@ account.onsubmit = function(){
 	}
 	else if (tcode.value == '' || tnum.value == ''){
 		alert('You should fill in the phone code and number.');
+		tcode.focus();
 	}
 	else if ( !passMask.test(pass.value) ){
 		alert('Password should contain minimum 6 chars and at least 1 number and 1 capital letter.');
@@ -38,6 +40,7 @@ account.onsubmit = function(){
 				if (this.status == 200){
 					var response = this.responseText;
 					alert('Information was successfully sent. Server responded: ' + response);
+					fname.value = lname.value = email.value = tcode.value = tnum.value = pass.value = '';
 				}
 				else{
 					alert('Something is wrong, check out the error code.');

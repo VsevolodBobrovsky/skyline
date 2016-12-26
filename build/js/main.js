@@ -1,14 +1,1 @@
-var request = new XMLHttpRequest();
-request.open('POST', '/done', true);
-request.onreadystatechange = function(e){
-	if (this.readyState == 4){
-		if (this.status == 200){
-			var response = this.responseText;
-			alert(response);
-		}
-		else{
-			console.log('Something is wrong, check out the error code.');
-		}
-	}
-}
-request.send(null);
+var account=document.getElementById("account"),emailMask=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,passMask=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/;account.onsubmit=function(e){e.preventDefault();var t=document.getElementById("fname"),a=document.getElementById("lname"),l=document.getElementById("email"),s=document.getElementById("tcode"),n=document.getElementById("tnum"),u=document.getElementById("pass");if(""==t.value)alert("You should fill in the first name."),t.focus();else if(""==a.value)alert("You should fill in the last name."),a.focus();else if(emailMask.test(l.value))if(""==s.value||""==n.value)alert("You should fill in the phone code and number."),s.focus();else if(passMask.test(u.value)){var o=new XMLHttpRequest;o.open("POST","/done",!0),o.onreadystatechange=function(e){if(4==this.readyState)if(200==this.status){var o=this.responseText;alert("Information was successfully sent. Server responded: "+o),t.value=a.value=l.value=s.value=n.value=u.value=""}else alert("Something is wrong, check out the error code.")},o.send(null)}else alert("Password should contain minimum 6 chars and at least 1 number and 1 capital letter."),u.focus();else alert("Email address should be valid (test@example.com)."),l.focus()};

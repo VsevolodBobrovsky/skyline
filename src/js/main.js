@@ -1,13 +1,13 @@
 var request = new XMLHttpRequest();
-request.open('GET', 'http://localhost:8080', true);
+request.open('POST', '/done', true);
 request.onreadystatechange = function(e){
 	if (this.readyState == 4){
 		if (this.status == 200){
 			var response = this.responseText;
-			console.log(response);
+			alert(response);
 		}
 		else{
-			console.log('Something is wrong, checkout the error code.');
+			console.log('Something is wrong, check out the error code.');
 		}
 	}
 }

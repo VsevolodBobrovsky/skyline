@@ -1,7 +1,6 @@
 'use strict';
 
-var http = require('http'),
-	gulp = require('gulp'),
+var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	prefixer = require('gulp-autoprefixer'),
 	uglify = require('gulp-uglify'),
@@ -9,7 +8,6 @@ var http = require('http'),
 	cssmin = require('gulp-clean-css'),
 	imagemin = require('gulp-imagemin'),
 	imageminJpegtran = require('imagemin-jpegtran'),
-	nodemon = require('gulp-nodemon'),
 	browserSync = require('browser-sync'),
 	reload = browserSync.reload;
 
@@ -23,9 +21,9 @@ var path = {
 	},
 	src: {
 		html: 'src/*.html',
-		js: 'src/js/*.js',
-		style: 'src/style/*.scss',
-		img: 'src/img/*.*',
+		js: 'src/js/main.js',
+		style: 'src/style/main.scss',
+		img: 'src/img/**/*.*',
 		fonts: 'src/fonts/*.*'
 	},
 	watch: {
@@ -44,45 +42,47 @@ var config = {
 	},
 	tunnel: true,
 	host: 'localhost',
-	port: 8080,
+	port: 9000,
 	logPrefix: "Bobrovsky"
 };
 
-gulp.task('html:build', function(){
+gulp.task('html:build', function () {
 	gulp.src(path.src.html)
 		.pipe(gulp.dest(path.build.html))
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('js:build', function(){
+gulp.task('js:build', function () {
 	gulp.src(path.src.js)
 		// .pipe(uglify())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('style:build', function(){
+gulp.task('style:build', function () {
 	gulp.src(path.src.style)
-		.pipe(sass())
-		// .pipe(prefixer())
-		// .pipe(cssmin())
+		.pipe(sass())/*
+		.pipe(prefixer())
+		.pipe(cssmin())*/
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('image:build', function(){
-	gulp.src(path.src.img)
-		/*.pipe(imagemin({
+gulp.task('image:build', function () {
+	gulp.src(path.src.img)/*
+		.pipe(imagemin({
 			progressive: true,
 			use: [imageminJpegtran()],
+			arithmetic: true,
 			interlaced: true
 		}))*/
-		.pipe(gulp.dest(path.build.img));
+		.pipe(gulp.dest(path.build.img))
+		.pipe(reload({stream: true}));
 });
 
-gulp.task('fonts:build', function(){
-    gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts))
+gulp.task('fonts:build', function () {
+	gulp.src(path.src.fonts)
+		.pipe(gulp.dest(path.build.fonts));
 });
 
 gulp.task('build', [
@@ -93,7 +93,7 @@ gulp.task('build', [
 	'fonts:build'
 ]);
 
-gulp.task('webserver', function(){
+gulp.task('webserver', function () {
 	browserSync(config);
 });
 

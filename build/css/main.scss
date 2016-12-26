@@ -64,12 +64,14 @@ h1, h2, h3{
 }
 
 body{
-	background: #000 url(../img/bg.jpg) no-repeat center top;
+	background: #000;
 	color: #fff;
 	font-family: $osans;
 }
 
 .wrapper{
+	background: url(../img/bg.jpg) no-repeat center top;
+	background-size: cover;
 }
 
 .container{
@@ -79,7 +81,7 @@ body{
 }
 
 .logo{
-	margin: 20px 0 6px;
+	margin: 10px 0 15px;
 }
 
 .title{
@@ -93,8 +95,7 @@ body{
 	font-size: 30pt;
 	text-transform: capitalize;
 	text-shadow: 1px 1px 1px #000;
-	width: 650px;
-	letter-spacing: 1px;
+	width: 640px;
 	margin: 0 auto;
 }
 
@@ -109,25 +110,15 @@ body{
 .account-form{
 	display: block;
 	float: right;
-	margin: 30px 121px 50px 0;
-	width: 287px;
-	position: relative;
-	&:before{
-		content: '';
-		position: absolute;
-		bottom: -9px;
-		left: -127px;
-		width: 127px;
-		height: 116px;
-		background: url(../img/arrow.png) no-repeat center center;
-	}
+	margin: 25px 100px 0 0;
+	width: 290px;
 }
 
 .account-title{
 	font-family: $bnto;
 	font-size: 20pt;
 	text-shadow: 5px 0px 40px #000, 0px 0px 30px #000;
-	margin: 0 0 6px;
+	margin: 0 0 15px;
 }
 
 .account-title-green{
@@ -139,11 +130,10 @@ body{
 	display: block;
 	width: 100%;
 	font-family: $osans;
-	font-size: 11pt;
 	background: #000;
 	color: #bdbdbd;
-	margin: 0 0 12px;
-	padding: 14px 13px;
+	margin: 0 0 18px;
+	padding: 14px 10px;
 	box-sizing: border-box;
 }
 
@@ -153,36 +143,12 @@ body{
 }
 
 .account-input-phonenum{
-	width: 222px;
+	width: 215px;
 	float: right;
 }
 
 .account-button{
-	width: 100%;
-	background: url(../img/button_bg.png) no-repeat center center;
-	font-family: $bnto;
-	color: #fff;
-	padding: 5px 21px;
-	text-align: left;
-	font-size: 34pt;
-	position: relative;
-	cursor: pointer;
-	&:after{
-		content: '';
-		position: absolute;
-		top: 18px;
-		right: 15px;
-		width: 29px;
-		height: 28px;
-		background: url(../img/button_arrow.png) no-repeat center center;
-	}
-}
-
-.account-link{
-	display: inline-block;
-	width: 290px;
-	box-sizing: border-box;
-	margin: 45px auto 60px;
+	width: 100%
 }
 
 .clearfix{
@@ -194,35 +160,15 @@ body{
 }
 
 .benefits-block{
-	display: inline-block;
-	width: 240px;
-	height: 285px;
-	background: url(../img/box_bg.png) no-repeat center center;
-	vertical-align: top;
-	box-sizing: border-box;
-	padding: 10px 25px;
-	margin: 0 13px;
-}
-
-.benefits-block-title, .benefits-block-text{
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	width: 100%;
+	
 }
 
 .benefits-block-title{
-	height: 87px;
-	font-family: $bnt;
-	font-size: 23pt;
-	color: #070a0d;
+	
 }
 
 .benefits-block-text{
-	height: 167px;
-	font-size: 11pt;
-	line-height: 23px;
-	justify-content: space-around;
+	
 }
 
 .benefits-block-img{
@@ -230,13 +176,19 @@ body{
 	margin: 0 auto;
 }
 
+.payment{
+	
+}
+
 .payment-link{
-	margin: 0 2px;
+	
+}
+
+.payment-logo{
+	
 }
 
 .eligibility{
-	margin: 23px 0 15px;
 	text-align: left;
 	color: #c3c3c3;
-	font-size: 8pt;
 }
